@@ -22,13 +22,13 @@
 					<h:outputText value="Usuário: " />
 				</h:column>
 				<h:column>
-					<h:inputText />
+					<h:inputText value="#{testeBean.usuario}"/>
 				</h:column>
 				<h:column>
 					<h:outputText value="Senha: " />
 				</h:column>
 				<h:column>
-					<h:inputText />
+					<h:inputSecret value="#{testeBean.senha}"/>
 				</h:column>
 				<h:column>
 					<h:commandButton value="Logar" action="#{testeBean.login}" />

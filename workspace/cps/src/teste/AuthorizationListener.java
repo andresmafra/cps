@@ -24,7 +24,7 @@ public class AuthorizationListener implements PhaseListener,Serializable {
 	 */
 	private static final long serialVersionUID = 4531L;
 	
-	public static final String[] urls = {"/index.xhtml", "/depoisdoindex.xhtml"};
+	public static final String[] urls = {"/index.jsp", "/depoisdoindex.jsp"};
 
     public boolean verificarAutorizacao(String paginaRequisitada) {
         for (String s : urls) {
@@ -39,7 +39,7 @@ public class AuthorizationListener implements PhaseListener,Serializable {
         FacesContext facesContext = event.getFacesContext();
         String currentPage = facesContext.getViewRoot().getViewId();
 
-        boolean isLoginPage = (currentPage.lastIndexOf("login.xhtml") > -1);
+        boolean isLoginPage = (currentPage.lastIndexOf("login.jsp") > -1);
         HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
         Object currentUser = session.getAttribute("usuarioLogado");
 

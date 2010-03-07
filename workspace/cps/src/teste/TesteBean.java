@@ -13,12 +13,33 @@ import javax.servlet.http.HttpSession;
  */
 public class TesteBean {
 
+	private String usuario;
+	private String senha;
+	
     public TesteBean() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
         session.setAttribute("usuarioLogado", "teste");
     }
 
     public String login() {
+    	if(this.getUsuario().equals("teste") && this.getSenha().equals("teste"))
         return "logado";
+    	return "";
     }
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
 }

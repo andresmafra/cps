@@ -18,7 +18,7 @@
 	<!-- Configurações do Facelets -->
 	<context-param>
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
-		<param-value>.xhtml</param-value>
+		<param-value>.jsp</param-value>
 	</context-param>
 
 	<!-- RichFaces configuration parameters -->
@@ -49,6 +49,6 @@
 		<session-timeout>30</session-timeout>
 	</session-config>
 	<welcome-file-list>
-		<welcome-file>faces/login.xhtml</welcome-file>
+		<welcome-file>faces/login.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>
