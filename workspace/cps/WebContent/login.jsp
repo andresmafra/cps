@@ -10,7 +10,7 @@
 <head>
 <title>Teste Login</title>
 </head>
-
+<!--  -->
 <f:view>
 	<h:form>
 		<rich:panel style="width: 250px;">
