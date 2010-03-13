@@ -11,12 +11,13 @@ import javax.servlet.http.HttpSession;
  *
  * @author André
  */
-public class TesteBean {
+
+public class LoginBean {
 
 	private String usuario;
 	private String senha;
 	
-    public TesteBean() {
+    public LoginBean() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
         session.setAttribute("usuarioLogado", "teste");
     }

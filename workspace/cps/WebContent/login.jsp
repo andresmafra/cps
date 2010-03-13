@@ -22,16 +22,16 @@
 					<h:outputText value="Usuário: " />
 				</h:column>
 				<h:column>
-					<h:inputText value="#{testeBean.usuario}"/>
+					<h:inputText value="#{loginBean.usuario}"/>
 				</h:column>
 				<h:column>
 					<h:outputText value="Senha: " />
 				</h:column>
 				<h:column>
-					<h:inputSecret value="#{testeBean.senha}"/>
+					<h:inputSecret value="#{loginBean.senha}"/>
 				</h:column>
 				<h:column>
-					<h:commandButton value="Logar" action="#{testeBean.login}" />
+					<h:commandButton value="Logar" action="#{loginBean.login}" />
 				</h:column>
 			</h:panelGrid>
 		</rich:panel>
