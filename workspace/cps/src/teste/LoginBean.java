@@ -19,7 +19,7 @@ public class LoginBean {
 	
     public LoginBean() {
         HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-        session.setAttribute("usuarioLogado", "teste");
+        session.setAttribute("usuarioLogado", "abc");
     }
 
     public String login() {

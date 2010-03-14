@@ -24,7 +24,7 @@ public class AuthorizationListener implements PhaseListener,Serializable {
 	 */
 	private static final long serialVersionUID = 4531L;
 	
-	public static final String[] urls = {"/index.jsp", "/depoisdoindex.jsp"};
+	public static final String[] urls = {"/login.jsp", "/depoisdoindex.jsp"};
 
     public boolean verificarAutorizacao(String paginaRequisitada) {
         for (String s : urls) {
@@ -50,6 +50,12 @@ public class AuthorizationListener implements PhaseListener,Serializable {
     }
 
     public void beforePhase(PhaseEvent event) {
+    	FacesContext facesContext = event.getFacesContext();
+    	if(getPhaseId() == null){
+            NavigationHandler nh = facesContext.getApplication().getNavigationHandler();
+            nh.handleNavigation(facesContext, null,"loginPage");
+    	}
+    		
     }
 
     public PhaseId getPhaseId() {
