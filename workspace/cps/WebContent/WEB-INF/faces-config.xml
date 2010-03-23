@@ -1,76 +1,30 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config version="1.2" 
-              xmlns="http://java.sun.com/xml/ns/javaee"
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
-    
-    <application>
-        <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
-    </application>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
 
-    <managed-bean>
-        <managed-bean-name>loginBean</managed-bean-name>
-        <managed-bean-class>teste.LoginBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-
-    <navigation-rule>
-        <from-view-id>/*</from-view-id>
-        <navigation-case>
-            <from-outcome>loginPage</from-outcome>
-            <to-view-id>/login.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <navigation-rule>
-        <from-view-id>/login.jsp</from-view-id>
-        <navigation-case>
-            <from-outcome>logado</from-outcome>
-            <to-view-id>/depoisdoindex.jsp</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    
-    <lifecycle>
-        <phase-listener>teste.AuthorizationListener</phase-listener>
-    </lifecycle>
-
-    <!-- Classes mapeadas
-    <managed-bean>
-        <managed-bean-name>participanteBean</managed-bean-name>
-        <managed-bean-class>br.safeandsecret.Beans.ParticipanteBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
-    <managed-bean>
-        <managed-bean-name>candidatoBean</managed-bean-name>
-        <managed-bean-class>br.safeandsecret.Beans.CandidatoBean</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>-->
-<!--
-    <navigation-rule>
-        <navigation-case>
-            <from-action>#{participanteBean.toCadPage}</from-action>
-            <from-outcome>toCadPage</from-outcome>
-            <to-view-id>/cadastroParticipante.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <navigation-case>
-            <from-action>#{candidatoBean.toCadPageCand}</from-action>
-            <from-outcome>toCadPageCand</from-outcome>
-            <to-view-id>/cadastroCandidato.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>
-    <navigation-rule>
-        <from-view-id>/cadastroParticipante.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>cadastrado</from-outcome>
-            <to-view-id>/cadastroParticipanteOk.xhtml</to-view-id>
-        </navigation-case>
-        <navigation-case>
-            <from-outcome>naocadastrado</from-outcome>
-            <to-view-id>/cadastroParticipante.xhtml</to-view-id>
-        </navigation-case>
-    </navigation-rule>-->
+	<!-- Facelets Config -->
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+	</application>
+	<!-- Messages Bundle -->
+	<application>
+		<resource-bundle>
+			<base-name>br.iteratorsystems.cps.resources.ApplicationMessages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>en_US</supported-locale>
+		</locale-config>
+		<message-bundle>br.iteratorsystems.cps.resources.ApplicationMessages</message-bundle>
+	</application>
+	<!-- Mapeamento dos Beans -->
+	<managed-bean>
+		<managed-bean-name>localeController</managed-bean-name>
+		<managed-bean-class>br.iteratorsystems.cps.controller.LocaleController</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 </faces-config>
-

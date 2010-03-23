@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<html>
+	<head>
+		<title>CPS - Beta Version</title>
+	</head>
+<body>
+	<ui:insert name="top-menu">
+		<ui:include src="barraMenu.jsf" />
+	</ui:insert>
+	<div id="middleUp">
+		<ui:insert name="content"/>
+	</div>
+	<div id="middleDown">
+	</div>
+	</body>
+</html>
+</jsp:root>

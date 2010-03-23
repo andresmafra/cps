@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<f:view contentType="text/html" locale="#{localeController.currentLocale}">
+		<link href="#{facesContext.externalContext.request.contextPath}/view/style/geral.css" rel="stylesheet" type="text/css" />
+	<h:form>
+	<table align="left">
+	<td width="150px">
+	<div class="Logo"></div>
+	</td>
+	<td align="center" width="700">
+			<a4j:commandLink value="#{msg.top_menu_search}" styleClass="letrasDefault"/>
+			<rich:spacer height="50" width="20" styleClass="separadorMenu"/>
+			<a4j:commandLink value="#{msg.top_menu_access}" styleClass="letrasDefault"/>
+			<rich:spacer height="50" width="20" styleClass="separadorMenu"/>
+			<a4j:commandLink value="#{msg.top_menu_car}" styleClass="letrasDefault"/>
+			<rich:spacer height="50" width="20" styleClass="separadorMenu"/>
+			<a4j:commandLink value="#{msg.top_menu_mylists}" styleClass="letrasDefault"/>
+	</td>
+	<td align="left" width="300">
+		<!-- informações topo -->
+			<h:commandLink action="#{localeController.portugueseLocale}" title="#{msg.information_pt_br}">
+			 <h:graphicImage url="/view/images/flagBRASIL.png" />
+			</h:commandLink>
+			<rich:spacer width="3"/>
+			<h:commandLink action="#{localeController.englishLocale}" title="#{msg.information_en_us}">
+			 <h:graphicImage url="/view/images/flagUSA.png" />
+			</h:commandLink>
+			<rich:spacer width="5"/>
+			<h:outputText value="#{msg.information_welcome}" styleClass="letrasTopo" rendered="true"/>
+			<h:outputText value="André " styleClass="letrasTopo" rendered="true"/>
+			<rich:spacer width="5"/>
+			<h:graphicImage url="/view/images/loginTopo.png" rendered="false"/>
+			<a4j:commandLink value="#{msg.information_login}" styleClass="letrasTopo"  rendered="false"/>
+			<h:graphicImage url="/view/images/logoutTopo.png" rendered="true"/>
+			<a4j:commandLink value="#{msg.information_logout}" styleClass="letrasTopo" rendered="true"/>
+	</td>
+	</table>
+	</h:form>	
+	</f:view>
+</jsp:root>

@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+.Menu
+{
+	margin-top: 0px;
+	margin-left: 300px;
+	margin-right: 0px;
+}
+.letrasTopo{
+	font-weight: normal;
+	font-size: 7pt;
+	font-style: italic;
+	font-family: Verdana;
+	white-space: nowrap;
+}
+.letrasDefault
+{
+	/*width: 26%;
+	right: 10%;
+	position: absolute;
+	padding-right: 12px;*/
+	font-weight: normal;
+	font-size: 12pt;
+	font-style: bold;
+	font-family: Verdana;
+	white-space: nowrap;
+}
+.informacoesTopo
+{
+	margin-top: 1px;
+	margin-left: 550px;
+}
+.separadorMenu
+{
+	background-image: url("../images/separadorMenu.png");
+	background-repeat: no-repeat;
+	height: 30px;
+}
+.Logo
+{
+	background-position: left;
+	background-image: url("../images/logo.png");
+	width: 80%;
+	background-repeat: no-repeat;
+	height: 77px;
+}
