@@ -8,6 +8,11 @@
 
 	<ui:composition template="template/template.jsf">
 		<ui:define name="content">
+		<rich:spacer height="30px"/>
+			<table align="center">
+				<td><h:inputText maxlength="50" styleClass="barraPesquisa" /></td>
+				<td><a4j:commandButton image="/view/images/Lupa.png" title="#{msg.default_button_search}" /></td>
+			</table>
 		</ui:define>
 	</ui:composition>
 </jsp:root>

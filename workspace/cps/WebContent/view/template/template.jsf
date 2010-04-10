@@ -3,19 +3,25 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<html>
+	<html>
 	<head>
-		<title>CPS - Beta Version</title>
+	<title>CPS - Beta Version</title>
 	</head>
-<body>
-	<ui:insert name="top-menu">
+	<body>
+	<table width="80%" align="center">
+		<tr>
+			<td>
+				<ui:insert name="top-menu">
 		<ui:include src="barraMenu.jsf" />
-	</ui:insert>
-	<div id="middleUp">
-		<ui:insert name="content"/>
-	</div>
-	<div id="middleDown">
-	</div>
+	</ui:insert>		
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<ui:insert name="content" />			
+			</td>
+		</tr>
+	</table>
 	</body>
-</html>
+	</html>
 </jsp:root>

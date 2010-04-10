@@ -1,26 +1,16 @@
 @CHARSET "ISO-8859-1";
 
-.Menu
-{
-	margin-top: 0px;
-	margin-left: 300px;
-	margin-right: 0px;
-}
 .letrasTopo{
 	font-weight: normal;
-	font-size: 7pt;
+	font-size: 8pt;
 	font-style: italic;
 	font-family: Verdana;
 	white-space: nowrap;
 }
 .letrasDefault
 {
-	/*width: 26%;
-	right: 10%;
-	position: absolute;
-	padding-right: 12px;*/
 	font-weight: normal;
-	font-size: 12pt;
+	font-size: 11pt;
 	font-style: bold;
 	font-family: Verdana;
 	white-space: nowrap;
@@ -29,6 +19,18 @@
 {
 	margin-top: 1px;
 	margin-left: 550px;
+}
+.barraPesquisa{
+	height: 35px;
+	width: 500px;
+	font-weight: normal;
+	font-size: 12pt;
+	font-style: bold;
+	font-family: Verdana;
+	white-space: nowrap;
+}
+.botaoDefault{
+	
 }
 .separadorMenu
 {
@@ -40,7 +42,7 @@
 {
 	background-position: left;
 	background-image: url("../images/logo.png");
-	width: 80%;
+	width: 250%;
 	background-repeat: no-repeat;
 	height: 77px;
 }

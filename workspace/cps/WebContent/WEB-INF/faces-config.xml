@@ -9,6 +9,7 @@
 	<application>
 		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
 	</application>
+	
 	<!-- Messages Bundle -->
 	<application>
 		<resource-bundle>
@@ -21,6 +22,7 @@
 		</locale-config>
 		<message-bundle>br.iteratorsystems.cps.resources.ApplicationMessages</message-bundle>
 	</application>
+	
 	<!-- Mapeamento dos Beans -->
 	<managed-bean>
 		<managed-bean-name>localeController</managed-bean-name>
