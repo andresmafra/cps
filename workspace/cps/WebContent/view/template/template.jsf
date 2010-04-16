@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<html>
 	<head>
 	<title>CPS - Beta Version</title>
+	<!-- <script type="text/javascript" src="view/js/jquerymaskedinput-121.js"/> -->
 	</head>
 	<body>
 	<table width="80%" align="center">
 		<tr>
 			<td>
 				<ui:insert name="top-menu">
-		<ui:include src="barraMenu.jsf" />
-	</ui:insert>		
+					<ui:include src="barraMenu.jsf" />
+				</ui:insert>		
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<ui:insert name="content" />			
+				<f:view>
+				<ui:insert name="content" />	
+				</f:view>		
 			</td>
 		</tr>
 	</table>

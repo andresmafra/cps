@@ -13,14 +13,14 @@
 	<!-- Messages Bundle -->
 	<application>
 		<resource-bundle>
-			<base-name>br.iteratorsystems.cps.resources.ApplicationMessages</base-name>
+			<base-name>ApplicationMessages</base-name>
 			<var>msg</var>
 		</resource-bundle>
 		<locale-config>
 			<default-locale>pt_BR</default-locale>
 			<supported-locale>en_US</supported-locale>
 		</locale-config>
-		<message-bundle>br.iteratorsystems.cps.resources.ApplicationMessages</message-bundle>
+		<message-bundle>ApplicationMessages</message-bundle>
 	</application>
 	
 	<!-- Mapeamento dos Beans -->
@@ -29,4 +29,28 @@
 		<managed-bean-class>br.iteratorsystems.cps.controller.LocaleController</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userManagementBean</managed-bean-name>
+		<managed-bean-class>br.iteratorsystems.cps.beans.UserManagementBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>findAddress</managed-bean-name>
+		<managed-bean-class>br.iteratorsystems.cps.common.FindAddress</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>defaultBean</managed-bean-name>
+		<managed-bean-class>br.iteratorsystems.cps.beans.DefaultBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<!-- Regras de navegação -->
+	<navigation-rule>
+		<from-view-id>/view/default.jsf</from-view-id>
+		<navigation-case>
+			<from-outcome>filtersOk</from-outcome>
+			<to-view-id>/view/pages/addFilters.jsf</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>

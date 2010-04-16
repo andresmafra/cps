@@ -1,16 +1,22 @@
 package br.iteratorsystems.cps.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @Table(name="rede",schema="tabelas",catalog="cps")
@@ -19,7 +25,6 @@ public class REDE implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE)
 	@Column(name="id_rede",unique=true)
 	private Integer id_rede;
 	@Column(name="nome",length=30)
@@ -27,16 +32,21 @@ public class REDE implements Serializable {
 	@Column(name="dataultimamodificacao")
 	@Temporal(TemporalType.DATE)
 	private Date data_ultima_motificacao;
+	@OneToMany(mappedBy="rede",fetch=FetchType.LAZY)
+	@Cascade(CascadeType.ALL)
+	private Collection<LOJA> lojas;
 	
 	public REDE(){}
 	
-	public REDE(Integer idRede, String nome, Date dataUltimaMotificacao) {
+	public REDE(Integer idRede, String nome, Date dataUltimaMotificacao,
+			Collection<LOJA> lojas) {
 		super();
 		id_rede = idRede;
 		this.nome = nome;
 		data_ultima_motificacao = dataUltimaMotificacao;
+		this.lojas = lojas;
 	}
-	
+
 	public Integer getId_rede() {
 		return id_rede;
 	}
@@ -54,6 +64,14 @@ public class REDE implements Serializable {
 	}
 	public void setData_ultima_motificacao(Date dataUltimaMotificacao) {
 		data_ultima_motificacao = dataUltimaMotificacao;
+	}
+	
+	public Collection<LOJA> getLojas() {
+		return lojas;
+	}
+
+	public void setLojas(Collection<LOJA> lojas) {
+		this.lojas = lojas;
 	}
 
 	@Override

@@ -15,33 +15,79 @@
 	font-family: Verdana;
 	white-space: nowrap;
 }
-.informacoesTopo
-{
-	margin-top: 1px;
-	margin-left: 550px;
-}
-.barraPesquisa{
-	height: 35px;
-	width: 500px;
+.letras{
 	font-weight: normal;
-	font-size: 12pt;
+	font-size: 13pt;
 	font-style: bold;
 	font-family: Verdana;
 	white-space: nowrap;
+	color: blue;
+}
+.letrasTitulo{
+	font-weight: normal;
+	font-size: 13pt;
+	font-style: bold;
+	font-family: Verdana;
+	white-space: nowrap;
+	color: green;
+}
+.letrasAba{
+	font-weight: normal;
+	font-size: 14pt;
+	font-style: oblique;
+	font-family: sans-serif;
+	white-space: normal;
+	color: black;
+}
+.letrasToolTip{
+	font-weight: bolder;
+	font-size: 13pt;
+	font-style: italic;
+	font-family: fantasy;
+	white-space: nowrap;
+	color: black;
+}
+.letrasInfo{
+	font-weight: normal;
+	font-size: 12pt;
+	font-style: bold;
+	font-family: sans-serif;
+	white-space: nowrap;
+	color: green;
+}
+.letrasErro{
+	font-weight: normal;
+	font-size: 9pt;
+	font-stretch: semi-condensed;
+	font-style: oblique;
+	font-family: Verdana;
+	white-space: nowrap;
+	color: red;
+}
+.barraPesquisa{
+	height: 35px;
+	width: 450px;
+}
+.barraDefault{
+	height: 20px;
+}
+.carInformation{
+	font-weight: normal;
+	font-size: 17pt;
+	font-style: italic;
+	font-family: Verdana;
+	letter-spacing: normal;
+	color: darkblue;
 }
 .botaoDefault{
-	
-}
-.separadorMenu
-{
-	background-image: url("../images/separadorMenu.png");
-	background-repeat: no-repeat;
-	height: 30px;
+	height: 35px;
+	width: 170px;
 }
 .Logo
 {
 	background-position: left;
 	background-image: url("../images/logo.png");
+	margin-top: 1px;
 	width: 250%;
 	background-repeat: no-repeat;
 	height: 77px;

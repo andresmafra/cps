@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:composition template="../template/template.jsf">
+		<ui:define name="content">
+			<rich:spacer height="100" />
+			<h:panelGrid columns="3">
+			<h:column>
+					<rich:panel style="width: 430px;">
+						<f:facet name="header">
+							<h:panelGroup>
+							<h:graphicImage url="/view/images/login.png"/>
+							<rich:spacer width="5"/>
+							<h:outputText value="#{msg.useraccess_has_login}" styleClass="letrasAba"/>
+							</h:panelGroup>
+						</f:facet>
+						<h:panelGrid>
+							<h:column>
+								<h:outputText value="#{msg.useraccess_mailorusername}" styleClass="letras"/>
+							</h:column>
+							<h:column>
+								<h:inputText maxlength="50" size="51" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+							</h:column>
+							<h:column>
+								<h:outputText value="#{msg.useraccess_password}" styleClass="letras"/>
+							</h:column>
+							<h:column>
+								<h:inputSecret maxlength="10" size="12" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>		
+							</h:column>
+							<h:column>
+								<h:commandButton value="#{msg.useraccess_btn_login}" styleClass="letras"/>								
+							</h:column>
+						</h:panelGrid>
+					</rich:panel>
+			</h:column>
+			<h:column>
+				<rich:spacer width="100px"/>
+				<h:outputText value="#{msg.useraccess_or}" styleClass="letras"/>
+				<rich:spacer width="100px"/>
+			</h:column>
+			<h:column>
+				  <rich:panel style="width: 430px;">
+						<f:facet name="header">
+						<h:panelGroup>
+							<h:graphicImage url="/view/images/createLogin.png"/>
+							<rich:spacer width="5"/>
+							<h:outputText value="#{msg.useraccess_create_login}" styleClass="letrasAba"/>
+						</h:panelGroup>
+						</f:facet>
+						<h:panelGrid>
+							<h:column>
+								<h:outputText value="#{msg.useraccess_email}" styleClass="letras"/>
+							</h:column>
+							<h:column>
+								<h:inputText maxlength="50" size="51" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+							</h:column>
+							<h:column>
+								<h:outputText value="#{msg.useraccess_cep}" styleClass="letras"/>
+							</h:column>
+							<h:column>
+								<h:inputText id="cep" maxlength="9" size="10" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold">
+									<rich:jQuery query="mask('99999-999')" selector="#cep" timing="immediate"/>
+								</h:inputText>	
+								<h:outputText value="#{msg.personalcontatc_CEP_info}" styleClass="letrasInfo"/>
+							</h:column>
+							<h:column>
+								<h:commandButton value="#{msg.useraccess_cad}" styleClass="letras"/>								
+							</h:column>
+						</h:panelGrid>
+					</rich:panel>
+			</h:column>
+		</h:panelGrid>
+		</ui:define>
+	</ui:composition>
+</jsp:root>

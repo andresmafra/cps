@@ -5,11 +5,11 @@
 	id="WebApp_ID" version="2.5">
 
 	<display-name>cps</display-name>
-	
+
 	<welcome-file-list>
 		<welcome-file>faces/view/default.jsf</welcome-file>
 	</welcome-file-list>
-	
+
 	<!-- Faces Config -->
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
@@ -21,10 +21,14 @@
 		<url-pattern>/faces/*</url-pattern>
 	</servlet-mapping>
 	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/faces-config.xml</param-value>
+	</context-param>
+	<context-param>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
 		<param-value>server</param-value>
 	</context-param>
-	
+
 	<!-- RichFaces config -->
 	<filter>
 		<display-name>RichFaces Filter</display-name>
@@ -46,7 +50,7 @@
 		<param-name>org.richfaces.CONTROL_SKINNING</param-name>
 		<param-value>enable</param-value>
 	</context-param>
-	
+
 	<!-- Facelets Config -->
 	<context-param>
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>

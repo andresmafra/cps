@@ -37,6 +37,7 @@ public abstract class HibernateConfig {
 
 	private static void addMappedEntities(AnnotationConfiguration configuration) {
 		configuration.addAnnotatedClass(br.iteratorsystems.cps.entities.REDE.class);
+		configuration.addAnnotatedClass(br.iteratorsystems.cps.entities.LOJA.class);
 	}
 
 	protected static void closeSession() {
