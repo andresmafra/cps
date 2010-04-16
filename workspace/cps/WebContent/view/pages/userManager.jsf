@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:composition template="../template/template.jsf">
+		<ui:define name="content">
+		<rich:spacer height="30"/>
+		<rich:spacer height="50"/>
+		<center>
+			<rich:tabPanel width="100%" switchType="server">
+				<rich:tab>
+				<f:facet name="label">
+						<h:panelGroup>
+							<h:graphicImage url="/view/images/Acesso.png" />
+							<rich:spacer width="5px"/>
+							<h:outputText value="#{msg.usermanager_edit_access}" styleClass="letrasAba" />
+						</h:panelGroup>
+				</f:facet>
+				<ui:include src="userEdit.jsf"/>
+				</rich:tab>
+				<rich:tab>
+				<f:facet name="label">
+					<h:panelGroup>
+						<h:graphicImage url="/view/images/list.png" />
+						<rich:spacer width="5px"/>
+						<h:outputText value="#{msg.usermanager_list}" styleClass="letrasAba" />
+					</h:panelGroup>
+				</f:facet>
+				<ui:include src="myLists.jsf"/>
+				</rich:tab>
+				<rich:tab>
+				<f:facet name="label">
+					<h:panelGroup>
+						<h:graphicImage url="/view/images/restricted.png" />
+						<rich:spacer width="5px"/>
+						<h:outputText value="#{msg.usermanager_adm}" styleClass="letrasAba" />
+					</h:panelGroup>
+				</f:facet>
+				</rich:tab>
+			</rich:tabPanel>
+		</center>
+		</ui:define>
+	</ui:composition>
+</jsp:root>

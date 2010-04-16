@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -43,4 +44,69 @@
 	</table>
 	</h:form>	
 	</f:view>
+=======
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<f:view contentType="text/html" locale="#{localeController.currentLocale}">
+		<link href="#{facesContext.externalContext.request.contextPath}/view/style/geral.css" rel="stylesheet" type="text/css" />
+	<h:form>
+	<table align="left">
+	<td width="150px">
+	<div class="Logo"></div>
+	</td>
+	<td align="right" width="700">
+	<!-- menu topo -->
+	<rich:toolBar itemSeparator="line" width="90%">
+			<h:outputLink value="http://localhost:8080/cps/faces/view/default.jsf" styleClass="letrasDefault">
+				<h:outputText value="#{msg.top_menu_search}" />
+			</h:outputLink>
+			<h:outputLink value="http://localhost:8080/cps/faces/view/pages/myCar.jsf" styleClass="letrasDefault">
+				<h:outputText value="#{msg.top_menu_car}" styleClass="letrasDefault"/>
+			</h:outputLink>
+			<h:outputLink value="http://localhost:8080/cps/faces/view/pages/userAccess.jsf" styleClass="letrasDefault">
+				<h:outputText value="#{msg.top_menu_access}"/>
+			</h:outputLink>
+			<h:outputLink value="" styleClass="letrasDefault">
+				<h:outputText value="#{msg.top_menu_mylists}"/>
+			</h:outputLink>
+				<h:panelGroup id="languageGroup">
+				<h:commandLink action="#{localeController.portugueseLocale}" title="#{msg.information_pt_br}">
+			 	<h:graphicImage url="/view/images/flagBRASIL.png" />
+				</h:commandLink>
+				<rich:spacer width="3"/>
+				<h:commandLink action="#{localeController.englishLocale}" title="#{msg.information_en_us}">
+			 	<h:graphicImage url="/view/images/flagUSA.png" />
+				</h:commandLink>
+				</h:panelGroup>
+				<h:panelGroup id="myCarGroup">
+					<h:graphicImage url="/view/images/emptyCar.png" title="#{msg.top_menu_emptyCar_info}" rendered="false" width="70%"/>
+					<h:graphicImage url="/view/images/itemCar.png" rendered="true" width="70%"/>
+					<rich:toolTip direction="top-right" followMouse="true" rendered="true">
+						<h:outputFormat value="#{msg['top_menu_itemCar_info']}">
+							<f:param value="69"/>
+						</h:outputFormat>
+					</rich:toolTip>
+				</h:panelGroup>
+			<h:panelGroup id="loginGroup">
+			<h:outputText value="#{msg.information_welcome}" styleClass="letrasTopo" rendered="false"/>
+			<h:outputText value="André " styleClass="letrasTopo" rendered="false"/>
+			<rich:spacer width="5"/>
+			<h:graphicImage url="/view/images/loginTopo.png" rendered="true"/>
+			<a4j:commandLink value="#{msg.information_login}" styleClass="letrasTopo"  rendered="true"/>
+			<h:graphicImage url="/view/images/logoutTopo.png" rendered="false"/>
+			<rich:spacer width="5"/>
+			<a4j:commandLink value="#{msg.information_logout}" styleClass="letrasTopo" rendered="false"/>
+			</h:panelGroup>
+	</rich:toolBar>
+	</td>
+	</table>
+	</h:form>	
+	</f:view>
+>>>>>>> 5718741821530aa28f5caf47ea20c09ffa0912af
 </jsp:root>

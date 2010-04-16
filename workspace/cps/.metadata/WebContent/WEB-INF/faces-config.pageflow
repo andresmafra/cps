@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12690883301200" configfile="/cps/WebContent/WEB-INF/faces-config.xml"/>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf12690883301200" configfile="/cps/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="view/default.jsf" id="pf12713424560530" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf12713424560531" path="/view/default.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="view/pages/addFilters.jsf" id="pf12713424560692" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf12713424560531" path="/view/pages/addFilters.jsf"/>
+  <links id="pf12713424560531" target="pf12713424560692" source="pf12713424560530" outcome="filtersOk"/>
+</pageflow:Pageflow>
+>>>>>>> 5718741821530aa28f5caf47ea20c09ffa0912af

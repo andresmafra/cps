@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
@@ -15,4 +16,101 @@
 			</table>
 		</ui:define>
 	</ui:composition>
+=======
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+	<ui:composition template="template/template.jsf">
+		<ui:define name="content">
+		<h:form id="defaultForm">
+		<rich:spacer height="30px"/>
+			<table align="center">
+				<td>
+					<h:outputText value="#{msg.default_information_search}" styleClass="letrasDefault"/>
+				</td>
+				<td bgcolor="blue">
+				<h:inputText maxlength="50" styleClass="barraPesquisa" style="font-size:20px; font-family:Verdana; color:black; font-weight:bold"/>
+				</td>
+				<td>
+				<a4j:commandButton image="/view/images/Lupa.png" title="#{msg.default_button_search}" />
+				</td>
+			</table>
+			<rich:spacer height="30px"/>
+			<center>
+			<h:panelGrid id="resultDataTable" rendered="true" columns="1">
+				<h:column>
+					<rich:extendedDataTable width="1000" height="300" rows="5" var="produto">
+						<rich:column sortable="false" width="140">
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_producttable_image}"/>
+							</f:facet>
+							<h:graphicImage value="Img nao disponivel"/>
+						</rich:column>
+						<rich:column width="400">
+								<f:facet name="header">
+									<h:outputText value="#{msg.default_producttable_description}"/>
+								</f:facet>
+							<h:outputText value="Bombom"/>
+						</rich:column>
+						<rich:column width="130">
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_producttable_measure}" />
+							</f:facet>
+							<h:outputText value="KG"/>
+						</rich:column>
+						<rich:column width="130">
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_producttable_pack}"/>
+							</f:facet>
+							<h:outputText value="2 KG"/>
+						</rich:column>
+						<rich:column width="200">
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_producttable_add}"/>
+							</f:facet>
+							<h:panelGroup>
+								<a4j:commandButton image="/view/images/addCar.png" title="#{msg.default_producttable_add}"/>
+								<h:inputText size="6" maxlength="4"/>
+							</h:panelGroup>
+						</rich:column>
+					</rich:extendedDataTable>
+				</h:column>
+			</h:panelGrid>
+			<rich:spacer height="30"/>
+			<h:panelGrid id="painelInformacoes" columns="2" rendered="true">
+				<h:column>
+					<h:outputText value="#{msg.default_car_information}" styleClass="letrasInfo"/>
+				</h:column>
+				<h:column>
+					<rich:dataTable id="tableResumo" columns="2" rows="5" width="100%">
+						<rich:column width="80%"> 
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_summarytable_product}"/>
+							</f:facet>
+						</rich:column>
+						<rich:column width="20%">
+							<f:facet name="header">
+								<h:outputText value="#{msg.default_summarytable_amount}"/>
+							</f:facet>
+						</rich:column>
+					</rich:dataTable>
+					<rich:datascroller for="tableResumo"/>
+				</h:column>
+				<h:column>
+				
+				</h:column>
+				<h:column>
+					<h:commandButton value="#{msg.default_button_compare}" styleClass="botaoDefault" action="#{defaultBean.toFilters}"/>
+				</h:column>
+			</h:panelGrid>
+			</center>
+		</h:form>
+		</ui:define>
+	</ui:composition>
+>>>>>>> 5718741821530aa28f5caf47ea20c09ffa0912af
 </jsp:root>
