@@ -44,6 +44,11 @@
 		<managed-bean-class>br.iteratorsystems.cps.beans.DefaultBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>filtersBean</managed-bean-name>
+		<managed-bean-class>br.iteratorsystems.cps.beans.FiltersBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	
 	<!-- Regras de navegação -->
 	<navigation-rule>

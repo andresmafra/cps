@@ -13,6 +13,7 @@ import br.iteratorsystems.cps.entities.REDE;
 public class TestHibernateCrud extends HibernateConfig{
 
 	public void get(){
+		
 		Session s = getSession();
 		Criteria c = s.createCriteria(REDE.class);
 		REDE l = (REDE) c.uniqueResult();

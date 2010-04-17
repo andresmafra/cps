@@ -1,21 +1,22 @@
 @CHARSET "ISO-8859-1";
 
-.letrasTopo{
+.letrasTopo {
 	font-weight: normal;
 	font-size: 8pt;
 	font-style: italic;
 	font-family: Verdana;
 	white-space: nowrap;
 }
-.letrasDefault
-{
+
+.letrasDefault {
 	font-weight: normal;
 	font-size: 11pt;
 	font-style: bold;
 	font-family: Verdana;
 	white-space: nowrap;
 }
-.letras{
+
+.letras {
 	font-weight: normal;
 	font-size: 13pt;
 	font-style: bold;
@@ -23,7 +24,8 @@
 	white-space: nowrap;
 	color: blue;
 }
-.letrasTitulo{
+
+.letrasTitulo {
 	font-weight: normal;
 	font-size: 13pt;
 	font-style: bold;
@@ -31,7 +33,8 @@
 	white-space: nowrap;
 	color: green;
 }
-.letrasAba{
+
+.letrasAba {
 	font-weight: normal;
 	font-size: 14pt;
 	font-style: oblique;
@@ -39,15 +42,24 @@
 	white-space: normal;
 	color: black;
 }
-.letrasToolTip{
-	font-weight: bolder;
-	font-size: 13pt;
-	font-style: italic;
-	font-family: fantasy;
-	white-space: nowrap;
+
+.letrasAbaB {
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: serif;
+	white-space: normal;
 	color: black;
 }
-.letrasInfo{
+
+.letrasToolTip {
+	font-weight: lighter;
+	font-size: 12pt;
+	font-style: italic;
+	font-family: cursive;
+	color: black;
+}
+
+.letrasInfo {
 	font-weight: normal;
 	font-size: 12pt;
 	font-style: bold;
@@ -55,23 +67,17 @@
 	white-space: nowrap;
 	color: green;
 }
-.letrasErro{
-	font-weight: normal;
-	font-size: 9pt;
-	font-stretch: semi-condensed;
-	font-style: oblique;
-	font-family: Verdana;
-	white-space: nowrap;
-	color: red;
-}
-.barraPesquisa{
+
+.barraPesquisa {
 	height: 35px;
 	width: 450px;
 }
-.barraDefault{
+
+.barraDefault {
 	height: 20px;
 }
-.carInformation{
+
+.carInformation {
 	font-weight: normal;
 	font-size: 17pt;
 	font-style: italic;
@@ -79,16 +85,25 @@
 	letter-spacing: normal;
 	color: darkblue;
 }
-.botaoDefault{
+
+.botaoDefault {
 	height: 35px;
 	width: 170px;
 }
-.Logo
-{
+
+.Logo {
 	background-position: left;
 	background-image: url("../images/logo.png");
 	margin-top: 1px;
 	width: 250%;
 	background-repeat: no-repeat;
 	height: 77px;
+}
+.camposObr {
+	font-weight: bold;
+	font-size: 9pt;
+	font-stretch: semi-condensed;
+	font-family: Verdana;
+	white-space: nowrap;
+	color: red;
 }
