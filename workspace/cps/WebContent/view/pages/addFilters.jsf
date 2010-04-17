@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<ui:composition template="../template/template.jsf">
+		<ui:define name="content">
+			<h:form id="addFiltersForm">
+			<rich:spacer height="30"/>
+			<h:panelGroup id="selectCepPanel">
+				<center><h:outputText value="#{msg.addfilters_topinformation}" style="font-weight: normal;font-size: 13pt;font-style: bold;font-family: Verdana;white-space: nowrap;color: darkblue;"/></center>
+				<rich:spacer height="15"/>
+				<h:panelGrid columns="2">
+					<h:column>
+						<h:outputText value="#{msg.addfilters_mycep}" rendered="false" styleClass="letras"/>
+						<h:outputText value="#{msg.addfilters_inputcep}" rendered="true" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:panelGroup>
+							<h:inputText value="#{filtersBean.cep}" maxlength="9" size="11" disabled="true" rendered="false" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+							<h:panelGrid columns="3">
+								<h:column>
+									<h:inputText value="#{filtersBean.cep}" maxlength="9" size="11" rendered="true" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold" title="#{msg.personalcontatc_CEP_info}"/>
+									<rich:spacer width="2"/>
+									<h:outputText value="#{msg.personalcontatc_CEP_info}" rendered="true" styleClass="letrasInfo"/>
+								</h:column>
+								<h:column>
+									<a4j:commandButton action="#{filtersBean.find}" image="/view/images/Lupa.png" rendered="true" title="#{msg.addfilters_findCep}" style="width:80%;" reRender="addFiltersForm,resultCepPanel"/>
+								</h:column>
+								<h:column>
+									<rich:spacer width="4"/>
+									<h:outputLink target="_blank" value="http://www.buscacep.correios.com.br/">
+										<h:outputText value="#{msg.personalcontact_CEP_unknown}"/>
+									</h:outputLink>
+								</h:column>
+							</h:panelGrid>
+						</h:panelGroup>
+					</h:column>
+					<h:column></h:column>
+					<h:column>
+						<h:outputText value="#{msg.useraccess_or}" rendered="false" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:outputText value="#{msg.addfilters_anothercep}" rendered="false" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:panelGroup>
+						<h:inputText maxlength="9" size="11" rendered="false" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+						<rich:spacer width="2"/>
+						<h:outputText value="#{msg.personalcontatc_CEP_info}" rendered="false" styleClass="letrasInfo"/>
+						<a4j:commandButton image="/view/images/Lupa.png" rendered="false" title="#{msg.addfilters_findCep}" style="width:10%;"/>
+						</h:panelGroup>
+					</h:column>
+				</h:panelGrid>
+			</h:panelGroup>
+			<rich:spacer height="20"/>
+			<rich:separator height="1" width="880" lineType="double"/>
+			<rich:spacer height="10"/>
+			<h:panelGroup id="resultCepPanel" rendered="true">
+			<rich:panel>
+				<f:facet name="header">
+					<h:panelGroup>
+						<h:graphicImage url="/view/images/house.png"/>
+						<rich:spacer width="3"/>
+						<h:outputText value="#{msg.addfilters_header_address}" styleClass="letrasAba"/>
+					</h:panelGroup>
+				</f:facet>
+				<h:panelGrid columns="4">
+					<h:column>
+						<h:outputText value="#{msg.personalcontact_street}" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:outputText value="#{msg.personalcontact_district}" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:outputText value="#{msg.personalcontact_city}" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:outputText value="#{msg.personalcontact_state}" styleClass="letras"/>
+					</h:column>
+					<h:column>
+						<h:inputText disabled="true" value="#{filtersBean.logradouro}" id="inputRua" maxlength="50" size="30" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+					</h:column>
+					<h:column>
+						<h:inputText disabled="true" id="inputBairro" value="#{filtersBean.bairro}" maxlength="50" size="20" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+					</h:column>
+					<h:column>
+						<h:inputText disabled="true" value="#{filtersBean.cidade}" id="inputCidade" maxlength="50" size="25" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+					</h:column>
+					<h:column>
+						<h:inputText disabled="true" value="#{filtersBean.estado}" id="selectEstado" maxlength="25" size="27" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+					</h:column>
+				</h:panelGrid>
+				</rich:panel>
+			</h:panelGroup>
+			<rich:spacer height="20"/>
+			<rich:separator height="1" width="880" lineType="double"/>
+			<rich:spacer height="10"/>
+			<h:panelGroup id="panelFilters" rendered="true">
+				<rich:panel>
+					<f:facet name="header">
+						<h:panelGroup>
+							<h:graphicImage url="/view/images/checklist.png"/>
+							<rich:spacer width="3"/>
+							<h:outputText value="#{msg.addfilters_header_information}" styleClass="letrasAba"/>
+						</h:panelGroup>
+					</f:facet>
+					<h:panelGrid columns="5">
+						<h:column>
+							<rich:panel>
+								<f:facet name="header">
+									<h:panelGroup>
+									<h:graphicImage url="/view/images/price.png"/>
+									<h:outputText value="#{msg.addfilters_filtersbox_price}" styleClass="letrasAbaB"/>
+									</h:panelGroup>
+								</f:facet>
+								<h:selectBooleanCheckbox/>
+								<rich:spacer width="3"/>
+								<h:outputText value="#{msg.addfilters_select}" styleClass="letrasInfo"/>
+								<rich:toolTip followMouse="true" layout="block" mode="ajax" direction="top-right">
+									<span>
+										<h:outputText value="#{msg.addfilters_tip_price_1}"/>
+										<br />
+									</span>
+									<span>
+										<h:outputText value="#{msg.addfilters_tip_price_2}"/>
+										<br />
+									</span>
+									<span>
+										<strong>
+										<h:outputText value="#{msg.addfilters_tip_price_3}"/>
+										</strong>
+									</span>
+								</rich:toolTip>
+							</rich:panel>
+						</h:column>
+						<h:column>
+							<rich:panel>
+								<f:facet name="header">
+									<h:panelGroup>
+									<h:graphicImage url="/view/images/distance.png"/>
+									<h:outputText value="#{msg.addfilters_filtersbox_distance}" styleClass="letrasAbaB"/>
+									</h:panelGroup>
+								</f:facet>
+								<h:selectBooleanCheckbox/>
+								<rich:spacer width="3"/>
+								<h:outputText value="#{msg.addfilters_select}" styleClass="letrasInfo"/>
+								<rich:toolTip followMouse="true" layout="block" mode="ajax" direction="top-right">
+									<h:outputText value="#{msg.addfilters_tip_distance_1}"/>
+									<br />
+									<h:outputText value="#{msg.addfilters_tip_distance_2}"/>
+									<br />
+									<h:outputText value="#{msg.addfilters_tip_distance_3}"/>
+									<br />
+									<strong>
+										<h:outputText value="#{msg.addfilters_tip_distance_4}"/>
+									</strong>
+								</rich:toolTip>
+							</rich:panel>
+						</h:column>
+						<h:column>
+							<rich:panel>
+								<f:facet name="header">
+									<h:panelGroup>
+									<h:graphicImage url="/view/images/delivery.png"/>
+									<h:outputText value="#{msg.addfilters_filtersbox_delivery}" styleClass="letrasAbaB"/>
+									</h:panelGroup>
+								</f:facet>
+								<h:selectBooleanCheckbox/>
+								<rich:spacer width="3"/>
+								<h:outputText value="#{msg.addfilters_select}" styleClass="letrasInfo"/>
+								<rich:toolTip followMouse="true" layout="block" mode="ajax" direction="top-right">
+									<h:outputText value="#{msg.addfilters_tip_delivery_1}"/>
+									<br />
+									<h:outputText value="#{msg.addfilters_tip_delivery_2}"/>
+									<br />
+									<h:outputText value="#{msg.addfilters_tip_delivery_3}"/>
+									<br />
+									<strong>
+									<h:outputText value="#{msg.addfilters_tip_delivery_4}"/>
+									</strong>
+								</rich:toolTip>
+							</rich:panel>
+						</h:column>
+						<h:column>
+							<rich:spacer width="40"/>
+							<h:commandButton value="#{msg.addfilter_button_compare}" style="width:70px;height:50px;"/>
+							<rich:progressBar />
+						</h:column>
+					</h:panelGrid>	
+				</rich:panel>
+			</h:panelGroup>
+			</h:form>
+		</ui:define>
+</ui:composition>
+</jsp:root>

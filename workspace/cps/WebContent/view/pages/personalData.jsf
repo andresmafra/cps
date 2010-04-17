@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:panelGrid>
+	<h:column>
+		<rich:spacer height="10"/>
+		<h:graphicImage url="/view/images/editPeople.png" />
+		<h:outputText value="#{msg.usermanager_personal_data}" styleClass="letrasTitulo"/>
+		<rich:separator lineType="solid" height="1" width="1000"/>
+		<rich:spacer height="10"/>
+		<h:panelGrid columns="2">
+		<h:column>
+			<h:outputText value="#{msg.personaldata_name} " styleClass="letras"/>
+		</h:column>
+		<h:column>
+			<h:inputText id="inputNome" required="true" value="#{userManagementBean.nome}" size="30" maxlength="20" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			<rich:spacer width="3"/>
+			<rich:message rendered="true" for="inputNome" styleClass="camposObr"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{msg.personaldata_lastname} " styleClass="letras"/>
+		</h:column>
+		<h:column>
+			<h:inputText id="inputSobrenome" required="true" value="#{userManagementBean.sobrenome}" size="40" maxlength="30" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			<rich:spacer width="3"/>
+			<rich:message rendered="true" for="inputSobrenome" styleClass="camposObr"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{msg.personaldata_born} " styleClass="letras"/>	
+		</h:column>
+		<h:column>
+			<rich:calendar id="inputData" required="true" value="#{userManagementBean.aniversario}" inputSize="13" styleClass="barraDefault" datePattern="dd/MM/yyyy" inputStyle="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			<rich:spacer width="3"/>
+			<rich:message rendered="true" for="inputData" styleClass="camposObr"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{msg.personaldata_cpf} " styleClass="letras"/>
+		</h:column>
+		<h:column>
+			<h:inputText id="inputCpf" required="true" value="#{userManagementBean.cpf}" size="17" maxlength="14" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			<h:outputText value="#{msg.personaldata_cpf_info}" styleClass="letrasInfo"/>
+			<rich:spacer width="3"/>
+			<rich:message rendered="true" for="inputCpf" styleClass="camposObr"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{msg.personaldata_rg} " styleClass="letras"/>
+		</h:column>
+		<h:column>
+			<h:inputText id="inputRg" required="true" value="#{userManagementBean.rg}" size="17" maxlength="15" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			<h:outputText value="#{msg.personaldata_rg_info}" styleClass="letrasInfo"/>
+			<rich:spacer width="3"/>
+			<rich:message rendered="true" for="inputRg" styleClass="camposObr"/>
+		</h:column>
+		<h:column>
+			<h:outputText value="#{msg.personaldata_exped} " styleClass="letras"/>
+		</h:column>
+		<h:column>
+			<h:inputText value="#{userManagementBean.orgao_expeditor}" size="5" maxlength="3" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>		
+		</h:column>
+		</h:panelGrid>
+	</h:column>
+</h:panelGrid>
+</jsp:root>
