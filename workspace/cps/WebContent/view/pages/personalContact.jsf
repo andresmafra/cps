@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+
+<h:panelGrid>
+	<h:column>
+		<rich:spacer height="10"/>
+		<h:graphicImage url="/view/images/contact.png"/>
+		<rich:spacer height="5"/>
+		<h:outputText value="#{msg.usermanager_contact}" styleClass="letrasTitulo" />
+		<rich:separator lineType="solid" height="1" width="1000"/>
+		<rich:spacer height="10"/>
+		<h:panelGrid columns="2">
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_mail}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText id="inputEmail" required="true" value="#{userManagementBean.email}" maxlength="50" size="52" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+				<rich:spacer width="3"/>
+				<rich:message rendered="true" for="inputEmail" styleClass="camposObr"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_CEP}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:panelGrid columns="4">
+					<h:column>
+						<h:inputText id="inputCep" required="true" value="#{userManagementBean.cep}" maxlength="9" size="10" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold">
+							<a4j:support event="onblur" ajaxSingle="true" action="#{userManagementBean.find}" reRender="inputRua,inputBairro,inputCidade,selectEstado,panelErrMsg"/>
+						</h:inputText>*
+						<rich:spacer width="2"/>
+						<h:outputText value="#{msg.personalcontatc_CEP_info}" styleClass="letrasInfo"/>
+					</h:column>
+					<h:column>
+						<rich:message rendered="true" for="inputCep" styleClass="camposObr"/>
+					</h:column>
+					<h:column>
+						<h:outputLink target="_blank" value="http://www.buscacep.correios.com.br/">
+							<h:outputText value="#{msg.personalcontact_CEP_unknown}"/>
+						</h:outputLink>
+					</h:column>
+					<h:column>
+						<a4j:outputPanel id="panelErrMsg">
+							<h:messages rendered="true" errorStyle="color:red;font-size:10pt;font-style: bold;" />
+						</a4j:outputPanel>
+					</h:column>
+				</h:panelGrid>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_street}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText readonly="true" value="#{userManagementBean.logradouro}" id="inputRua" maxlength="50" size="52" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_number}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText id="inputNumero" required="true" maxlength="6" size="8" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+				<rich:spacer width="3"/>
+				<rich:message rendered="true" for="inputNumero" styleClass="camposObr"/>
+			</h:column>	
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_compl}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText maxlength="20" size="22" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_district}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText readonly="true" id="inputBairro" value="#{userManagementBean.bairro}" maxlength="50" size="52" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_city}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText readonly="true" value="#{userManagementBean.cidade}" id="inputCidade" maxlength="50" size="52" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_state}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:inputText readonly="true" value="#{userManagementBean.estado}" id="selectEstado" maxlength="25" size="27" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>*
+			</h:column>
+			</h:panelGrid>
+			<rich:spacer height="10"/>
+			<rich:separator lineType="dashed" height="1" width="1000"/>
+			<rich:spacer height="10"/>
+			<h:panelGrid columns="2">
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_tel_res}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_ddd_tel}" styleClass="letras"/>
+				<h:inputText value="#{userManagementBean.ddd_tel_res}" maxlength="3" size="4" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+				<h:outputText value="#{msg.personalcontact_ddd_info}" styleClass="letrasInfo"/>
+				<rich:spacer width="5"/>
+				<h:outputText value="#{msg.personalcontact_tel_number}" styleClass="letras"/>
+				<h:inputText value="#{userManagementBean.tel_res}" maxlength="9" size="10" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+				<h:outputText value="#{msg.personalcontact_tel_info}" styleClass="letrasInfo"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_tel_cel}" styleClass="letras"/>
+			</h:column>
+			<h:column>
+				<h:outputText value="#{msg.personalcontact_ddd_tel}" styleClass="letras"/>
+				<h:inputText value="#{userManagementBean.ddd_tel_cel}" maxlength="3" size="4" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+				<h:outputText value="#{msg.personalcontact_ddd_info}" styleClass="letrasInfo"/>
+				<rich:spacer width="5"/>
+				<h:outputText value="#{msg.personalcontact_tel_number}" styleClass="letras"/>
+				<h:inputText value="#{userManagementBean.tel_cel}" maxlength="9" size="10" styleClass="barraDefault" style="font-size:12px; font-family:Verdana; color:black; font-weight:bold"/>
+				<h:outputText value="#{msg.personalcontact_tel_info}" styleClass="letrasInfo"/>
+			</h:column>
+			</h:panelGrid>
+	</h:column>
+</h:panelGrid>
+</jsp:root>
